@@ -1,7 +1,10 @@
-﻿using PrototypePattern.Classes;
+﻿using ObserverPattern.Classes;
 
-Student s1 = new Student(1, "A", "A@gmail", "123", "1234567890");
+A a = new A();
 
-var s2 = s1.Clone();
+a.AddSubscriber(new B());
+a.AddSubscriber(new C());
+a.AddSubscriber(new D());
+a.AddSubscriber(new E());
 
-Console.WriteLine(s2.Name);
+a.NewData("Hi");
