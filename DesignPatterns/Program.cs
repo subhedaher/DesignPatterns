@@ -1,10 +1,20 @@
-﻿using ObserverPattern.Classes;
+﻿using DataBusPattern.Classes;
 
 A a = new A();
+B b = new B();
+C c = new C();
+D d = new D();
 
-a.AddSubscriber(new B());
-a.AddSubscriber(new C());
-a.AddSubscriber(new D());
-a.AddSubscriber(new E());
+DataBus.GetInstance()
+    .AddSubscriber(a);
+DataBus.GetInstance()
+    .AddSubscriber(b);
+DataBus.GetInstance()
+    .AddSubscriber(c);
+DataBus.GetInstance()
+    .AddSubscriber(d);
 
-a.NewData("Hi");
+a.DataSend("hi");
+
+b.DataSend(10);
+
