@@ -1,6 +1,21 @@
-﻿using TemplatePattern.Classes;
+﻿using StrategyPattern.Classes;
 
-ArabicProcessing arabicProcessing = new ArabicProcessing();
+LowBattery lowBattery = new LowBattery();
 
-Console.WriteLine(arabicProcessing.TextProcessing("subhe"));
+ChargeBattery chargeBattery = new ChargeBattery();
+
+OffLine offLine = new OffLine();
+
+OnLine onLine = new OnLine();
+
+
+MobileOperation mobileOperation = new MobileOperation();
+
+mobileOperation.SetCurrentStrategy(lowBattery);
+
+mobileOperation.Process();
+
+mobileOperation.SetCurrentStrategy(offLine);
+
+mobileOperation.Process();
 
